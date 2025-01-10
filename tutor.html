@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become a Tutor</title>
+    <link rel="stylesheet" href="/tutor.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <img src="/Images/logo.png" alt="" class="logo_img">
+       <div class="first_name">
+        <P>PREVAILERS ACADEMY</P>
+       </div>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="enroll.html">Enroll now</a></li>
+        <li><a href="tutor.html">Become a Tutor</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <!-- Hamburger Icon -->
+    <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</nav>
+    <section id="tutor">
+        <h1>Become a Tutor</h1>
+        <div class="form-container">
+            <h2>Tutor Application Form</h2>
+            <form id="tutorForm" onsubmit="return validateForm()">
+                <!-- Personal Information -->
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name">
+    
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email">
+    
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+    
+                <!-- Subject Expertise -->
+                <label for="subjects">Subjects You Can Teach:</label>
+                <input type="text" id="subjects" name="subjects" placeholder="e.g., Mathematics, Physics, English">
+    
+                <!-- Educational Background -->
+                <label for="education">Highest Educational Qualification:</label>
+                <select id="education" name="education">
+                    <option value="">Select qualification...</option>
+                    <option value="bachelor">Bachelor's Degree</option>
+                    <option value="master">Master's Degree</option>
+                    <option value="phd">PhD</option>
+                    <option value="other">Other</option>
+                </select>
+    
+                <!-- Experience -->
+                <label for="experience">Teaching Experience (years):</label>
+                <input type="number" id="experience" name="experience" min="0" placeholder="Enter years of experience">
+    
+                <!-- Additional Information -->
+                <label for="message">Why do you want to join as a tutor?</label>
+                <textarea id="message" name="message" rows="4" placeholder="Tell us about yourself"></textarea>
+    
+                <!-- Submit Button -->
+                <button type="submit">Apply Now</button>
+            </form>
+            <p id="statusMessage"></p>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
