@@ -1,9 +1,3 @@
-// Simple form submission handler
-document.getElementById('contact-form').addEventListener('submit', function (event) {
-    event.preventDefault();
-    alert('Thank you for contacting Prevailers Academy. We will get back to you soon!');
-  });
-  
   function toggleMenu() {
     const navLinks = document.getElementById('navLinks');
     navLinks.classList.toggle('show');
@@ -88,10 +82,10 @@ function validateForm() {
         statusMessage.textContent = "Please enter a valid email address.";
         return false;
     }
-    if (!phone.match(phonePattern)) {
-        statusMessage.textContent = "Please enter a valid 11-digit phone number.";
-        return false;
-    }
+    // if (!phone.match(phonePattern)) {
+    //     statusMessage.textContent = "Please enter a valid 11-digit phone number.";
+    //     return false;
+    // }
     if (subjects === "") {
         statusMessage.textContent = "Please specify the subjects you can teach.";
         return false;

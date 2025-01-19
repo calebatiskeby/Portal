@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Enroll Now</title>
-        <link rel="stylesheet" href="/enroll.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enroll Now</title>
+    <link rel="stylesheet" href="enroll.css">
+</head>
 <body>
 
     <!-- Navigation Bar -->
     <nav class="navbar">
-        <img src="/Images/logo.png" alt="" class="logo_img">
+        <img src="Images/logo.png" alt="" class="logo_img">
        <div class="first_name">
         <P>PREVAILERS ACADEMY</P>
        </div>
@@ -28,21 +28,25 @@
         <span></span>
     </div>
 </nav>
+
     <section id="enroll">
         <h1>Enroll Now</h1>
         <div class="form-container">
             <h2>Student Enrollment Form</h2>
-            <form action="#">
+            <form action="https://formspree.io/f/mbllvvrl" method="POST">
+                <!-- Hidden field to specify this is an Enrollment Form -->
+                <input type="hidden" name="formType" value="Enrollment Form">
+                
                 <!-- Personal Information -->
                 <label for="name">Full Name:</label>
                 <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-    
+        
                 <label for="email">Email Address:</label>
                 <input type="email" id="email" name="email" placeholder="Enter your email" required>
-    
+        
                 <label for="phone">Phone Number:</label>
                 <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
-    
+        
                 <!-- Course Selection -->
                 <label for="course">Select Course:</label>
                 <select id="course" name="course" required>
@@ -53,7 +57,7 @@
                     <option value="stats">Statistics</option>
                     <option value="programming">Programming</option>
                 </select>
-    
+        
                 <label for="level">Education Level:</label>
                 <select id="level" name="level" required>
                     <option value="">Select level...</option>
@@ -61,11 +65,11 @@
                     <option value="undergrad">Undergraduate</option>
                     <option value="postgrad">Postgraduate</option>
                 </select>
-    
+        
                 <!-- Additional Information -->
                 <label for="message">Additional Information:</label>
                 <textarea id="message" name="message" rows="4" placeholder="Any specific requirements?"></textarea>
-    
+        
                 <!-- Submit Button -->
                 <button type="submit">Enroll Now</button>
             </form>

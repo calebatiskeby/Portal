@@ -5,15 +5,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>FINAL</title>
         <link rel="stylesheet" href="home.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     </head>
 <body>
   
     <!-- Navigation Bar -->
     <nav class="navbar">
-            <img src="/Images/logo.png" alt="" class="logo_img">
-           <div class="first_name">
+        <img src="Images/logo.png" alt="Logo" class="logo_img">
+        <div class="first_name">
             <P>PREVAILERS ACADEMY</P>
-           </div>
+        </div>
         <ul class="nav-links" id="navLinks">
             <li><a href="home.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
@@ -29,43 +30,47 @@
         </div>
     </nav>
 
-    <!-- Page Sections -->
-    <section id="home">
-        <h1 class="welcome">Welcome To Prevailers Academy</h1>
-        <div>
-            <img src="/Images/E-learning.png" class="home_img">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Welcome to Prevailers Academy</h1>
+            <p>Empower Your Learning Journey with the best instructors.</p>
         </div>
-        <section class="hero">
-            <h1 class="emp">Empower Your Learning Journey with Prevailers Academy</h1>
-            <p class="learn">Learn anytime, anywhere with our world-class instructors.</p>
-            <a href="#courses" class="btn">Explore Courses</a>
-             <!-- Slider Container -->
-          </section>
+        <div class="hero-image">
+            <img src="Images/E-learning.png" alt="E-learning Image">
+        </div>
     </section>
+
+    <!-- Page Sections -->
     <section id="courses" class="section">
         <h2>Our Courses</h2>
         <div class="course-grid">
-          <div class="course-card">
-            <h3>Web Development</h3>
-            <p>Learn to build modern websites and applications.</p>
-          </div>
-          <div class="course-card">
-            <h3>Science</h3>
-            <p>Master data analysis, visualization, and machine learning.</p>
-          </div>
-          <div class="course-card">
-            <h3>Mathematics</h3>
-            <p>Master data analysis, visualization, and machine learning.</p>
-          </div>
-          <div class="course-card">
-            <h3>English Language</h3>
-            <p>Enhance your marketing skills with the latest tools and strategies.</p>
-          </div>
+            <div class="course-card">
+                <i class="fas fa-laptop-code course-icon"></i>
+                <h3>Web Development</h3>
+                <p>Learn to build modern websites and applications.</p>
+            </div>
+            <div class="course-card">
+                <i class="fas fa-flask course-icon"></i>
+                <h3>Science</h3>
+                <p>Master data analysis, visualization, and machine learning.</p>
+            </div>
+            <div class="course-card">
+                <i class="fas fa-square-root-alt course-icon"></i>
+                <h3>Mathematics</h3>
+                <p>Master data analysis, visualization, and machine learning.</p>
+            </div>
+            <div class="course-card">
+                <i class="fas fa-pen-alt course-icon"></i>
+                <h3>English Language</h3>
+                <p>Enhance your marketing skills with the latest tools and strategies.</p>
+            </div>
         </div>
-      </section>
+    </section>
+
     <footer>
         <p>&copy; 2024 Prevailers Academy. All Rights Reserved.</p>
-      </footer>
+    </footer>
 
     <script src="script.js"></script>
 </body>
