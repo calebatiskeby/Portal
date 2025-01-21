@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate ID Cards</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .id-card {
+            width: 350px;
+            height: 200px;
+            border-radius: 10px;
+            background-color: #1e3a8a; /* Blue background */
+            color: white;
+            position: relative;
+            display: flex;
+            padding: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Logo at the top right */
+        .logo {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 50px;
+            height: 50px;
+        }
+
+        /* Photo section */
+        .id-photo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            margin-right: 15px;
+        }
+
+        /* Information section */
+        .id-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .id-info h2 {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .id-info p {
+            font-size: 12px;
+            margin: 2px 0;
+        }
+
+        /* Form to upload the file */
+        input[type="file"] {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Upload Excel and Generate ID Cards</h1>
+        <input type="file" id="fileInput" />
+        <button onclick="generateIDCards()">Generate ID Cards</button>
+        <div id="idCardsContainer" style="display: flex; flex-wrap: wrap; justify-content: center; margin-top: 20px;"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
+    <script>
+        let data = []; // To store the extracted data from the Excel file
+
+        // Function to handle file upload
+        document.getElementById('fileInput').addEventListener('change', handleFileUpload);
+
+        function handleFileUpload(event) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const workbook = XLSX.read(e.target.result, { type: 'binary' });
+                const sheet = workbook.Sheets[workbook.SheetNames[0]];
+                data = XLSX.utils.sheet_to_json(sheet);
+                console.log(data); // Output the data for debugging
+            };
+            reader.readAsBinaryString(file);
+        }
+
+        // Function to generate ID cards using Canvas
+        function generateIDCards() {
+            const container = document.getElementById('idCardsContainer');
+            container.innerHTML = ''; // Clear previous cards
+
+            data.forEach((item) => {
+                const canvas = document.createElement('canvas');
+                canvas.width = 350;
+                canvas.height = 200;
+                const ctx = canvas.getContext('2d');
+
+                // Draw the card background
+                ctx.fillStyle = '#1e3a8a'; // Blue background
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                // Add logo at the top-right (use any random logo image)
+                const logo = new Image();
+                logo.src = 'https://via.placeholder.com/50'; // Replace with a logo URL
+                logo.onload = function() {
+                    ctx.drawImage(logo, canvas.width - 60, 10, 50, 50); // Draw the logo
+                };
+
+                // Add photo (use a placeholder if no photo is provided)
+                const photo = new Image();
+                photo.src = item.photo || 'https://via.placeholder.com/60'; // Placeholder if no photo URL is provided
+                photo.onload = function() {
+                    ctx.drawImage(photo, 10, 10, 60, 60); // Draw photo on the card
+                };
+
+                // Add text info (name, position, etc.)
+                // If column names are different in your Excel, make sure you match them here
+                ctx.font = '16px Arial';
+                ctx.fillStyle = '#fff';
+                ctx.fillText(`Name: ${item.name || item['Full Name']}`, 80, 30); // Use the correct column name
+                ctx.fillText(`Email: ${item.email}`, 80, 70);
+                ctx.fillText(`Phone: ${item.phone}`, 80, 90);
+
+                // Add the card to the container
+                container.appendChild(canvas);
+            });
+        }
+    </script>
+</body>
+</html>
