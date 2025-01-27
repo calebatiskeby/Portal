@@ -23,8 +23,8 @@ body {
 
 .logo_img {
   display: flex;
-  width: 80px;
-  animation: flipLogo 2s infinite;
+  width: 85px;
+  animation: flipLogo 3s infinite;
 }
 
 .first_name {

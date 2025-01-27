@@ -94,18 +94,18 @@ body {
   justify-content: center;
   align-items: center;
   padding: 80px 20px;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/Portal//Images/E-learning.png') no-repeat center center/cover;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7),   rgba(72, 162, 52, 0.7)), url('/Portal//Images/E-learning.png') no-repeat center center/cover;
   color: white;
   text-align: center;
 }
 
 .hero-text h1 {
-  font-size: 3rem;
+  font-size: 1.5rem;
   margin-bottom: 20px;
 }
 
 .hero-text p {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 /* About Section Styling */
@@ -129,4 +129,45 @@ section {
   100% {
       transform: rotateY(360deg);
   }
+}
+
+.section {
+  margin-bottom: 50px;
+  background: linear-gradient(to right, rgba(3, 14, 7, 0.7),   rgba(7, 19, 4, 0.7)), url('/Portal//Images/E-learning.png') no-repeat center center/cover;
+
+}
+
+.section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.column {
+  flex: 1;
+  min-width: 30px;
+}
+
+.team-member {
+  text-align: center;
+}
+
+.team-member img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+footer {
+  background: #100000;
+  color: white;
+  text-align: center;
+  padding: 2rem 0;
 }
