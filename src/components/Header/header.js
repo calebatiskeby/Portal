@@ -38,7 +38,7 @@ function Header() {
 
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-      <Link to="/home">
+      <Link to="/">
       <div className="logo-container">
       <img src={logo} alt="Logo" className="logo_img" />
         <div className="academy-name">
