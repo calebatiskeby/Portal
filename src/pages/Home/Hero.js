@@ -21,11 +21,11 @@ const Hero = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
   };
 
-  // Auto slide every 10 seconds
+  // Auto slide every 15 seconds
   useEffect(() => {
-    const interval = setInterval(nextSlide, 15000); // 10 seconds
+    const interval = setInterval(nextSlide, 15000); // 15 seconds
     return () => clearInterval(interval); // Clean up interval on component unmount
-  }, []);
+  }, [nextSlide]); // Added nextSlide as a dependency
 
   return (
     <section className="hero">
