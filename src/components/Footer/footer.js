@@ -10,8 +10,8 @@ function Footer() {
         <div>
           <h3>Prevailers Academy</h3>
           <p>Abuja, Federal Capital Territory</p>
-          <p>Phone: +234 0000 0000</p>
-          <p>Whatsapp: 234 9114701938</p>
+          <p>Phone: +234 9114701938</p>
+          <p>Whatsapp: +234 9114701938</p>
           <p>Email: <a href="mailto:prevailersacademi@gmail.com">prevailersacademi@gmail.com</a></p>
         </div>
         <div>
