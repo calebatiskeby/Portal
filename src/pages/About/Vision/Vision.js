@@ -15,11 +15,6 @@ const Vision = () => {
             <p>Founder & CEO</p>
           </div>
           <div className="team-card">
-            <img src="/Images/Presh2.jpg" alt="Precious Emmanuel" className="team-image" />
-            <h3>Precious Emmanuel</h3>
-            <p>Tutor</p>
-          </div>
-          <div className="team-card">
             <img src="/Images/Iseg3.jpg" alt="Mr Freedom Iseg" className="team-image" />
             <h3>Engr. Freedom Iseg</h3>
             <p>Head of Content</p>
