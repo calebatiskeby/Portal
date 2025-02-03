@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './Hero.css'; // Your CSS file
 
 const Hero = () => {
@@ -11,10 +11,10 @@ const Hero = () => {
   // State to track the current slide
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Go to the next slide
-  const nextSlide = () => {
+  // Go to the next slide, memoized with useCallback
+  const nextSlide = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
+  }, [images.length]);
 
   // Go to the previous slide
   const prevSlide = () => {
@@ -25,7 +25,7 @@ const Hero = () => {
   useEffect(() => {
     const interval = setInterval(nextSlide, 15000); // 15 seconds
     return () => clearInterval(interval); // Clean up interval on component unmount
-  }, [nextSlide]); // Added nextSlide as a dependency
+  }, [nextSlide]); // Add nextSlide as a dependency
 
   return (
     <section className="hero">
