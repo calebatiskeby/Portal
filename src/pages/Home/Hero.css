@@ -21,7 +21,6 @@
   right: 0;
   bottom: 0;
   background: linear-gradient(to bottom, rgba(0.5, 0, 0, 0.7), rgba(0.5, 0, 0, 0.7)); /* Dark gradient */
-  z-index: 1; /* Overlay should be above the background but behind the text */
 }
 
 /* Text Overlay */
